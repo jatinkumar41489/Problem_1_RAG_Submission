@@ -1,0 +1,4 @@
+vectors,payload_gb,chroma_instance,required_ram_gib,chroma_infra_usd,chroma_ha_infra_usd,ops_usd,chroma_total_incl_ops_usd,managed_usd,managed_low_usd,managed_high_usd,saving_vs_infra_usd,saving_vs_incl_ops_usd
+100000,0.309,m6i.large,2.28,70.14,140.27,150.0,220.14,50,50,50,-20.14,-170.14
+1000000,3.086,m6i.large,4.79,70.7,141.24,300.0,370.7,50,50,50,-20.7,-320.7
+10000000,30.86,r6i.xlarge,29.89,190.13,378.71,900.0,1090.13,174.31,174.31,194.83,-15.82,-915.82

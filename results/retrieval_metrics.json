@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "timestamp": "2026-10-18T09:00:40+00:00",
+    "dataset": "evaluation",
+    "n_questions": 29,
+    "n_answerable": 23,
+    "embedding_backend": "sentence-transformers",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "chunk_size": 180,
+    "chunk_overlap": 30,
+    "top_k": 5,
+    "min_relevance_score": 0.3,
+    "vector_store": "ChromaDB (persistent, cosine)",
+    "environment": {
+      "python": "3.10.0",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "machine": "AMD64",
+      "cpu_count": 4,
+      "ram_gb": null
+    }
+  },
+  "primary_k": 5,
+  "by_k": {
+    "k=1": {
+      "recall_at_k_chunk": 0.8260869565217391,
+      "evidence_recall_at_k": 0.8478260869565217,
+      "hit_rate_at_k": 0.8695652173913043,
+      "mrr_at_k": 0.8695652173913043,
+      "ndcg_at_k": 0.8695652173913043,
+      "context_precision_at_k": 0.8695652173913043,
+      "n_eligible_queries": 23
+    },
+    "k=3": {
+      "recall_at_k_chunk": 0.9782608695652174,
+      "evidence_recall_at_k": 0.9782608695652174,
+      "hit_rate_at_k": 1.0,
+      "mrr_at_k": 0.9347826086956522,
+      "ndcg_at_k": 0.9350407153686884,
+      "context_precision_at_k": 0.3478260869565216,
+      "n_eligible_queries": 23
+    },
+    "k=5": {
+      "recall_at_k_chunk": 1.0,
+      "evidence_recall_at_k": 1.0,
+      "hit_rate_at_k": 1.0,
+      "mrr_at_k": 0.9347826086956522,
+      "ndcg_at_k": 0.9465219380892357,
+      "context_precision_at_k": 0.21956521739130438,
+      "n_eligible_queries": 23
+    },
+    "k=10": {
+      "recall_at_k_chunk": 1.0,
+      "evidence_recall_at_k": 1.0,
+      "hit_rate_at_k": 1.0,
+      "mrr_at_k": 0.9347826086956522,
+      "ndcg_at_k": 0.9465219380892357,
+      "context_precision_at_k": 0.11956521739130437,
+      "n_eligible_queries": 23
+    }
+  },
+  "excluded_queries": [],
+  "abstention_gate_at_configured_threshold": {
+    "threshold": 0.3,
+    "answerable_passed": 23,
+    "answerable_blocked": 0,
+    "unanswerable_passed_to_llm": 4,
+    "unanswerable_blocked": 2
+  },
+  "threshold_calibration": {
+    "status": "ok",
+    "recommended_min_relevance_score": 0.4633,
+    "balanced_accuracy_in_sample": 0.9783,
+    "loo_accuracy": 0.931,
+    "n": 29,
+    "answerable": {
+      "n": 23,
+      "min": 0.4299,
+      "median": 0.5684
+    },
+    "unanswerable": {
+      "n": 6,
+      "max": 0.4596,
+      "median": 0.3664
+    },
+    "false_abstain": 1,
+    "false_answer": 0,
+    "caveat": "Threshold is specific to the embedding model; scores of different models are not comparable. Calibrated on the same small set it is evaluated on - use the LOO figure as the honest estimate."
+  },
+  "metric_definitions": "see app/evaluation/retrieval_metrics.py and docs/EVALUATION_METHODOLOGY.md",
+  "label_caveat": "relevance labels are author-written evidence phrases, not independently validated ground truth"
+}

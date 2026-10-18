@@ -1,0 +1,30 @@
+id,type,answerable,status,reason,answer,citations,invalid_citations,retrieval_ms,generation_ms,prompt_tokens,completion_tokens,judge_available,faithfulness,relevance,unsupported_claims,judge_rationale,judge_error,exact_match,f1,contains_gold,citation_precision
+Q01,factual,True,answered,,Full-time employees receive 25 days of paid annual leave per calendar year [C1].,9f01abd02dca-0000,,24.0,475.4,1436,39,True,1.0,1.0,,"The answer directly states the number of paid annual leave days, which is explicitly provided in the context (C1), and fully addresses the question.",,0.0,0.2667,1.0,1.0
+Q02,factual,True,answered,,"Up to 5 unused annual leave days may be carried over into the next year, and they expire on 31 March [C1].",9f01abd02dca-0000,,56.3,299.7,1301,49,True,1.0,1.0,,"The answer restates the exact information from the context without adding or omitting details, directly addressing the question.",,0.0,0.3846,0.0,1.0
+Q03,factual,True,answered,,Primary caregivers receive 18 weeks of fully paid parental leave [C1].,9f01abd02dca-0001,,33.3,275.3,1387,36,True,1.0,1.0,,"The answer directly states the duration of fully paid parental leave for primary caregivers, which is explicitly given in the context (C1). No extraneous or unsupported information is included.",,0.0,0.3333,1.0,1.0
+Q04,factual,True,answered,,Eligible employees may work remotely up to 3 days per week [C1].,56a703bb14e7-0000,,53.4,296.1,1433,38,True,1.0,1.0,,"The answer directly restates the policy from C1, fully addressing the question.",,0.0,0.7059,1.0,1.0
+Q05,factual,True,answered,,The one-time home office stipend is $600 [C1][C2].,56a703bb14e7-0001 56a703bb14e7-0000,,32.4,287.1,1382,43,True,1.0,1.0,,"The answer correctly states the stipend amount, which is directly supported by both C1 and C2, and directly addresses the question.",,0.0,0.25,1.0,0.5
+Q06,pdf_page,True,generation_error,llm_call_failed,,,,44.7,4286.6,,,,,,,,,0.0,0.0,0.0,
+Q07,pdf_page,True,answered,,Expense reports must be submitted within 30 days of the expense date [C1].,1ec1f223c76c-0002,,53.8,2090.2,1436,38,True,1.0,1.0,,"The answer directly restates the policy from C1, fully addressing the question.",,0.0,0.3077,1.0,1.0
+Q08,pdf_page,True,generation_error,llm_call_failed,,,,41.1,4226.1,,,,,,,,,0.0,0.0,0.0,
+Q09,pdf_page,True,generation_error,llm_call_failed,,,,62.0,4275.6,,,,,,,,,0.0,0.0,0.0,
+Q10,pdf_page,True,answered,,Employees must use a password of at least 14 characters. [C1],dc7068a15c1f-0000,,54.7,2261.1,1375,36,True,1.0,1.0,,"The answer directly restates the policy from C1, fully addressing the question.",,0.0,0.3636,1.0,1.0
+Q11,pdf_page,True,generation_error,llm_call_failed,,,,41.8,4033.0,,,,,,,,,0.0,0.0,0.0,
+Q12,multi_document,True,generation_error,llm_call_failed,,,,53.5,4257.0,,,,,,,,,0.0,0.0,0.0,
+Q13,metadata_filter,True,answered,,A SEV1 page must be acknowledged by the primary engineer within 5 minutes [C1].,ade002b98f8d-0000,,47.3,970.0,1222,40,True,1.0,1.0,,"The answer directly reflects the statement in C1 that SEV1 alerts must be acknowledged within 5 minutes, fully addressing the question.",,0.0,0.3077,1.0,1.0
+Q14,metadata_filter,True,generation_error,llm_call_failed,,,,34.6,4015.5,,,,,,,,,0.0,0.0,0.0,
+Q15,factual,True,generation_error,llm_call_failed,,,,49.5,4440.6,,,,,,,,,0.0,0.0,0.0,
+Q16,factual,True,answered,,The Atlas Pro plan costs $199 per month [C1].,0de1e94d10c3-0000,,54.6,2210.0,1396,35,True,1.0,1.0,,"The answer directly states the price, which is explicitly listed in the context (C1). It fully addresses the question.",,0.0,0.6,1.0,1.0
+Q17,factual,True,generation_error,llm_call_failed,,,,41.0,4226.1,,,,,,,,,0.0,0.0,0.0,
+Q18,factual,True,generation_error,llm_call_failed,,,,53.3,4134.7,,,,,,,,,0.0,0.0,0.0,
+Q19,factual,True,answered,,A new version first receives 5% of traffic for 30 minutes in a canary rollout. [C2],e59993c236f9-0000,,52.2,2259.8,1308,44,True,1.0,1.0,,The answer directly reflects the information in chunk C2 and fully addresses the question.,,0.0,0.1429,1.0,1.0
+Q20,factual,True,generation_error,llm_call_failed,,,,45.1,4383.9,,,,,,,,,0.0,0.0,0.0,
+Q21,pdf_page,True,generation_error,llm_call_failed,,,,59.3,4128.6,,,,,,,,,0.0,0.0,0.0,
+Q22,factual,True,answered,,The weekly on-call stipend is $500 per week of primary rotation [C1].,ade002b98f8d-0001,,65.3,2148.0,1415,40,True,1.0,1.0,,"The answer directly states the weekly stipend amount, which is explicitly given in the context, and fully addresses the question.",,0.0,0.4286,1.0,1.0
+Q23,synthesis,True,generation_error,llm_call_failed,,,,41.7,4352.6,,,,,,,,,0.0,0.0,0.0,
+Q24,unanswerable,False,generation_error,llm_call_failed,,,,60.4,4090.7,,,,,,,,,,,,
+Q25,unanswerable,False,no_relevant_context,low_relevance,I could not find relevant information in the indexed documents to answer this question.,,,67.3,,,,,,,,,,,,,
+Q26,unanswerable,False,insufficient_evidence,model_reported_insufficient,The provided context does not contain any information about GPU-accelerated vector similarity search or vector search capabilities in Atlas.,,,31.8,2127.6,1300,40,,,,,,,,,,
+Q27,unanswerable_out_of_domain,False,no_relevant_context,low_relevance,I could not find relevant information in the indexed documents to answer this question.,,,45.7,,,,,,,,,,,,,
+Q28,unanswerable,False,generation_error,llm_call_failed,,,,34.5,4021.3,,,,,,,,,,,,
+Q29,filter_excludes_evidence,False,generation_error,llm_call_failed,,,,66.9,4019.4,,,,,,,,,,,,

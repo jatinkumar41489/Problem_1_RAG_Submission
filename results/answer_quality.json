@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "timestamp": "2026-10-18T09:00:40+00:00",
+    "dataset": "evaluation",
+    "n_questions": 29,
+    "n_answerable": 23,
+    "embedding_backend": "sentence-transformers",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "chunk_size": 180,
+    "chunk_overlap": 30,
+    "top_k": 5,
+    "min_relevance_score": 0.3,
+    "vector_store": "ChromaDB (persistent, cosine)",
+    "environment": {
+      "python": "3.10.0",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "machine": "AMD64",
+      "cpu_count": 4,
+      "ram_gb": null
+    }
+  },
+  "status": "completed",
+  "timestamp": "2026-10-18T09:02:11+00:00",
+  "generator_model": "qwen/qwen3.8-27b",
+  "judge_model": "openai/gpt-oss-120b",
+  "judge_same_model_as_generator_warning": false,
+  "k": 5,
+  "n_questions": 29,
+  "generation_errors": 15,
+  "aggregate": {
+    "faithfulness_mean": 1.0,
+    "answer_relevance_mean": 1.0,
+    "n_judged": 11,
+    "exact_match": 0.0,
+    "f1": 0.1778695652173913,
+    "contains_gold_lenient": 0.43478260869565216,
+    "n_with_gold": 23,
+    "citation_precision_mean": 0.9545454545454546,
+    "answered_when_answerable": 11,
+    "abstained_when_answerable": 12,
+    "answered_when_unanswerable": 0,
+    "abstained_when_unanswerable": 6,
+    "total_prompt_tokens": 16391,
+    "total_completion_tokens": 478
+  },
+  "judge_rubric": "1-5 integer scores normalised to 0..1 via (s-1)/4; see app/evaluation/judge.py",
+  "all_chunks_in_store": 25
+}

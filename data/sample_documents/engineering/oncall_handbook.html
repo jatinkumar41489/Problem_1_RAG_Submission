@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>On-Call Handbook</title>
+<style>.note { font-style: italic; }</style>
+</head>
+<body>
+<h1>On-Call Handbook</h1>
+<p>This handbook explains how engineering teams at Meridian Cloud staff the on-call rotation for production services and what is expected from the person on call.</p>
+
+<h2>Rotation</h2>
+<p>Each service team runs a weekly rotation with a primary and a secondary engineer. Handover happens every Monday at 10:00 local time and the outgoing engineer writes a handover note covering open incidents and risky changes. No engineer may be primary on call for more than 1 week in every 4.</p>
+
+<h2>Acknowledgement targets</h2>
+<p>When an alert pages the primary engineer, it must be acknowledged within 5 minutes for a SEV1 incident and within 15 minutes for a SEV2 incident. If the primary does not acknowledge a SEV1 page within 5 minutes, it escalates automatically to the secondary engineer, and after a further 10 minutes to the engineering manager. SEV3 alerts are handled during business hours and never page at night.</p>
+
+<h2>During an incident</h2>
+<p>The first responder opens an incident channel, posts a status update every 30 minutes, and assigns an incident lead if the incident lasts more than an hour. Customer-facing status page updates are posted by the support team on request of the incident lead. Engineers should prefer mitigation, such as a rollback, over a long investigation while customers are affected.</p>
+
+<h2>Compensation and rest</h2>
+<p>Engineers receive an on-call stipend of $500 per week of primary rotation. A page that requires work between 00:00 and 06:00 earns a compensatory day off, to be taken within 14 days. Engineers on call during the winter shutdown receive double the weekly stipend.</p>
+
+<h2>Reducing alert noise</h2>
+<p>Each team reviews its alerts monthly. Any alert that paged more than 3 times in a month without requiring action must be tuned or deleted. Runbook links are mandatory for every paging alert.</p>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[project]
+name = "problem1-rag"
+version = "1.0.0"
+description = "Cost-efficient RAG over PDF/HTML/Markdown on ChromaDB with a Groq LLM"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

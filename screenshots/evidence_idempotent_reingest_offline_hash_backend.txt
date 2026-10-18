@@ -1,0 +1,5 @@
+collection=rag_chunks model=hash-bow-384
+[start]            vectors = 0
+[ingest run #1]    vectors = 25 | new=12 updated=0 unchanged=0 upserted=25
+[ingest run #2]    vectors = 25 | new=0 updated=0 unchanged=12 upserted=0
+idempotent: YES - count unchanged after re-ingest

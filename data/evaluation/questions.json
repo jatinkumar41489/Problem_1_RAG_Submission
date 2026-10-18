@@ -1,0 +1,211 @@
+[
+  {
+    "id": "Q01",
+    "question": "How many days of paid annual leave do full-time employees receive per year?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q02",
+    "question": "How many unused annual leave days can be carried over, and when do they expire?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q03",
+    "question": "How long is fully paid parental leave for primary caregivers?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q04",
+    "question": "On how many days per week may eligible employees work remotely?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q05",
+    "question": "What is the one-time home office stipend amount?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q06",
+    "question": "What is the maximum hotel cost per night in tier-1 cities such as London?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q07",
+    "question": "Within how many days must expense reports be submitted?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q08",
+    "question": "Above what claim amount is approval from the finance director also needed?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q09",
+    "question": "What is the dinner meal limit per person when travelling?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q10",
+    "question": "What is the minimum password length employees must use?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q11",
+    "question": "How often must service account secrets and API keys be rotated?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q12",
+    "question": "For how long are authentication and access logs retained, and for how long does Atlas keep each automated backup?",
+    "type": "multi_document",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q13",
+    "question": "How quickly must a SEV1 page be acknowledged by the engineer on call?",
+    "type": "metadata_filter",
+    "filters": {
+      "category": "engineering"
+    },
+    "answerable": true
+  },
+  {
+    "id": "Q14",
+    "question": "How quickly must an Incident Commander be assigned for a SEV1 incident?",
+    "type": "metadata_filter",
+    "filters": {
+      "category": "security"
+    },
+    "answerable": true
+  },
+  {
+    "id": "Q15",
+    "question": "How soon must customers be notified after a personal data breach is confirmed?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q16",
+    "question": "What is the price of the Atlas Pro plan per month?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q17",
+    "question": "What is the maximum size of a single document in Atlas?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q18",
+    "question": "Over what time window does Atlas support point-in-time recovery?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q19",
+    "question": "What share of traffic does a new version receive first in a canary rollout?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q20",
+    "question": "On which days of the week are production deployments allowed?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q21",
+    "question": "What service credit applies if monthly uptime is below 99.9% but at least 99.0%?",
+    "type": "pdf_page",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q22",
+    "question": "How much is the weekly on-call stipend?",
+    "type": "factual",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q23",
+    "question": "What approval and notice are required for annual leave longer than 10 consecutive working days?",
+    "type": "synthesis",
+    "filters": null,
+    "answerable": true
+  },
+  {
+    "id": "Q24",
+    "question": "What is Meridian Cloud's policy on bringing pets to the office?",
+    "type": "unanswerable",
+    "filters": null,
+    "answerable": false
+  },
+  {
+    "id": "Q25",
+    "question": "What is the annual salary of the chief executive officer?",
+    "type": "unanswerable",
+    "filters": null,
+    "answerable": false
+  },
+  {
+    "id": "Q26",
+    "question": "Does Atlas support GPU-accelerated vector similarity search?",
+    "type": "unanswerable",
+    "filters": null,
+    "answerable": false
+  },
+  {
+    "id": "Q27",
+    "question": "What is the capital city of Australia?",
+    "type": "unanswerable_out_of_domain",
+    "filters": null,
+    "answerable": false
+  },
+  {
+    "id": "Q28",
+    "question": "What dental insurance coverage limit do employees have?",
+    "type": "unanswerable",
+    "filters": null,
+    "answerable": false
+  },
+  {
+    "id": "Q29",
+    "question": "What is the price of the Atlas Pro plan per month?",
+    "type": "filter_excludes_evidence",
+    "filters": {
+      "category": "hr"
+    },
+    "answerable": false
+  }
+]

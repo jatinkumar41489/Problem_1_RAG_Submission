@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-10-18T09:02:48+00:00",
+  "k": 5,
+  "embedding_backend": "sentence-transformers",
+  "embedding_model_effective": "sentence-transformers/all-MiniLM-L6-v2",
+  "dataset_questions": 29,
+  "results": [
+    {
+      "chunk_size": 80,
+      "chunk_overlap": 15,
+      "chunks": 53,
+      "metrics_at_k": {
+        "recall_at_k_chunk": 0.9855072463768115,
+        "evidence_recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr_at_k": 0.9275362318840579,
+        "ndcg_at_k": 0.9274956876022266,
+        "context_precision_at_k": 0.23478260869565226,
+        "n_eligible_queries": 23
+      },
+      "excluded_queries": [],
+      "retrieval_p50_ms": 26.681,
+      "retrieval_p95_ms": 46.321,
+      "avg_words_per_chunk": 69.8
+    },
+    {
+      "chunk_size": 180,
+      "chunk_overlap": 30,
+      "chunks": 25,
+      "metrics_at_k": {
+        "recall_at_k_chunk": 1.0,
+        "evidence_recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr_at_k": 0.9347826086956522,
+        "ndcg_at_k": 0.9465219380892357,
+        "context_precision_at_k": 0.21956521739130438,
+        "n_eligible_queries": 23
+      },
+      "excluded_queries": [],
+      "retrieval_p50_ms": 23.374,
+      "retrieval_p95_ms": 32.753,
+      "avg_words_per_chunk": 136.6
+    },
+    {
+      "chunk_size": 400,
+      "chunk_overlap": 60,
+      "chunks": 16,
+      "metrics_at_k": {
+        "recall_at_k_chunk": 0.9565217391304348,
+        "evidence_recall_at_k": 0.9565217391304348,
+        "hit_rate_at_k": 0.9565217391304348,
+        "mrr_at_k": 0.9565217391304348,
+        "ndcg_at_k": 0.9530313386586168,
+        "context_precision_at_k": 0.21884057971014495,
+        "n_eligible_queries": 23
+      },
+      "excluded_queries": [],
+      "retrieval_p50_ms": 22.604,
+      "retrieval_p95_ms": 30.001,
+      "avg_words_per_chunk": 196.6
+    }
+  ],
+  "caveats": [
+    "Only 25-ish chunks exist at the default size, so differences between configs rest on a handful of queries.",
+    "Word-based chunk sizes; the 400-word config would exceed MiniLM's 256 word-piece input limit (silent truncation) with the real model, an effect a hashed bag-of-words encoder cannot show.",
+    "Not evidence that one configuration is universally best."
+  ]
+}

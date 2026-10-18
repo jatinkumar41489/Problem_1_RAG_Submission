@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "timestamp": "2026-10-18T09:00:40+00:00",
+    "dataset": "evaluation",
+    "n_questions": 29,
+    "n_answerable": 23,
+    "embedding_backend": "sentence-transformers",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "chunk_size": 180,
+    "chunk_overlap": 30,
+    "top_k": 5,
+    "min_relevance_score": 0.3,
+    "vector_store": "ChromaDB (persistent, cosine)",
+    "environment": {
+      "python": "3.10.0",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "machine": "AMD64",
+      "cpu_count": 4,
+      "ram_gb": null
+    },
+    "vector_count": 25
+  },
+  "cold_start_first_query_ms": 51.54,
+  "k": 5,
+  "warmup_runs": 5,
+  "repeats": 5,
+  "queries": 29,
+  "retrieval": {
+    "n": 145,
+    "p50_ms": 36.316,
+    "p95_ms": 61.063,
+    "mean_ms": 42.59,
+    "min_ms": 22.045,
+    "max_ms": 288.934,
+    "p95_reliable": true
+  },
+  "embed": {
+    "n": 145,
+    "p50_ms": 28.082,
+    "p95_ms": 50.551,
+    "mean_ms": 32.947,
+    "min_ms": 16.563,
+    "max_ms": 265.599,
+    "p95_reliable": true
+  },
+  "vector_search": {
+    "n": 145,
+    "p50_ms": 8.069,
+    "p95_ms": 11.084,
+    "mean_ms": 9.643,
+    "min_ms": 5.466,
+    "max_ms": 133.228,
+    "p95_reliable": true
+  },
+  "method": "time.perf_counter; single thread; warm-up passes untimed; cold start reported separately; percentiles use linear interpolation",
+  "caveat": "Tiny local corpus on one machine; says nothing about production-scale latency."
+}

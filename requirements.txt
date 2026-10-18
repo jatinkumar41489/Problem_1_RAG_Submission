@@ -1,0 +1,17 @@
+# Versions below were installed and TESTED (Python 3.12.3, Linux) by the test suite in this repo.
+chromadb==1.5.9
+fastapi==0.143.3
+uvicorn==0.54.0
+pydantic==2.14.1
+pypdf==6.21.1
+beautifulsoup4==4.15.0
+markdown==3.10.2
+python-dotenv==1.2.4
+groq==1.7.0
+numpy==2.2.6
+pandas==2.2.3
+scikit-learn==1.6.1
+httpx==0.28.1
+# NOT testable in the sandbox that built this project (no huggingface.co access): the real embedder.
+# Range is a best-effort compatible range; run `python -m app.cli verify` after install to confirm 384-d output.
+sentence-transformers>=3.0,<6

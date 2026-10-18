@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Atlas Database Overview</title>
+<script>window.analytics = {id: "UA-ANALYTICS-PLACEHOLDER"};</script>
+</head>
+<body>
+<nav><a href="/">Home</a> <a href="/pricing">Pricing</a></nav>
+<h1>Atlas Database Overview</h1>
+<p>Atlas is Meridian Cloud's managed document database. It stores JSON documents, scales storage automatically and removes the need to patch or operate database servers yourself.</p>
+
+<h2>Architecture and availability</h2>
+<p>Every Atlas cluster keeps 3 replicas of the data, placed in separate availability zones of the same region. If a zone fails, a replica is promoted automatically, usually within 30 seconds. Multi-zone clusters are covered by a 99.99% monthly uptime target. Atlas is available in 12 regions across North America, Europe and Asia-Pacific.</p>
+
+<h2>Backups and recovery</h2>
+<p>Atlas takes an automated backup every day and keeps each backup for 35 days. Pro and Enterprise clusters also support point-in-time recovery to any second within the last 7 days. Restores create a new cluster, so the original cluster is never overwritten. Backups are stored in a different region from the cluster by default.</p>
+
+<h2>Security</h2>
+<p>Data is encrypted at rest with AES-256 and in transit with TLS 1.3. Customers can bring their own encryption keys on the Enterprise plan. Access is controlled through role-based permissions, and every administrative action is written to an audit log. Network access can be limited to an allow list of IP addresses or to a private network connection.</p>
+
+<h2>Performance</h2>
+<p>Atlas automatically adds indexes suggested by the performance advisor when the customer enables auto-indexing. Read replicas can serve analytics queries so that they do not compete with application traffic. Typical single-document reads complete in under 5 milliseconds inside the same region. Long-running queries are cancelled after 60 seconds by default.</p>
+
+<h2>Monitoring</h2>
+<p>The console shows storage use, connection counts and slow queries. Alerts can be sent by email or webhook when storage exceeds 80% of the plan limit. Metrics are retained for 30 days.</p>
+</body>
+</html>

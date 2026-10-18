@@ -1,0 +1,123 @@
+$ curl /health
+{"status":"ok","embedding":{"backend":"hash","model":"hash-bow-384","dim":384,"loaded":true},"generation":{"provider":"groq","model":"llama-3.3-70b-versatile","api_key_configured":false},"vector_store":{"ok":true,"collection":"rag_chunks","count":0,"persist_directory":"/tmp/api_chroma","distance":"cosine","embedding_model":"hash-bow-384","embedding_dim":384}}
+
+$ POST /ingest (first run)
+{
+ "root": "data/sample_documents",
+ "files_discovered": 12,
+ "files_processed": 12,
+ "files_new": 12,
+ "files_updated": 0,
+ "files_unchanged": 0,
+ "files_failed": 0,
+ "files_skipped": 0,
+ "chunks_upserted": 25,
+ "chunks_deleted": 0,
+ "sources_pruned": [],
+ "collection_count_before": 0,
+ "collection_count_after": 25,
+ "duration_ms": 431.3,
+ "embedding_model": "hash-bow-384",
+ "chunking": {
+  "method": "whitespace-word-window",
+  "unit": "whitespace word",
+  "chunk_size": 180,
+  "chunk_overlap": 30
+ }
+}
+
+$ POST /ingest (second run, same corpus)
+{
+ "root": "data/sample_documents",
+ "files_discovered": 12,
+ "files_processed": 0,
+ "files_new": 0,
+ "files_updated": 0,
+ "files_unchanged": 12,
+ "files_failed": 0,
+ "files_skipped": 0,
+ "chunks_upserted": 0,
+ "chunks_deleted": 0,
+ "sources_pruned": [],
+ "collection_count_before": 25,
+ "collection_count_after": 25,
+ "duration_ms": 99.0,
+ "embedding_model": "hash-bow-384",
+ "chunking": {
+  "method": "whitespace-word-window",
+  "unit": "whitespace word",
+  "chunk_size": 180,
+  "chunk_overlap": 30
+ }
+}
+
+$ POST /ingest path traversal
+{"error":{"code":"path_not_allowed","message":"Path is outside the allowed ingest roots ['data']."}} [HTTP 403]
+
+$ POST /retrieve with filter
+{
+ "request_id": "8f1bcbea78b1",
+ "retrieved_chunks": [
+  {
+   "rank": 1,
+   "chunk_id": "1ec1f223c76c-0001",
+   "score": 0.0929,
+   "distance": 0.9071,
+   "source_id": "finance/expense_policy.pdf",
+   "source_name": "expense_policy.pdf",
+   "title": "Meridian Cloud Expense Policy",
+   "document_type": "pdf",
+   "category": "finance",
+   "page": 2,
+   "section": ""
+  },
+  {
+   "rank": 2,
+   "chunk_id": "1ec1f223c76c-0002",
+   "score": 0.0367,
+   "distance": 0.9633,
+   "source_id": "finance/expense_policy.pdf",
+   "source_name": "expense_policy.pdf",
+   "title": "Meridian Cloud Expense Policy",
+   "document_type": "pdf",
+   "category": "finance",
+   "page": 3,
+   "section": ""
+  }
+ ],
+ "retrieved_chunk_count": 2,
+ "relevant": false,
+ "reason": "low_relevance",
+ "top_score": 0.0929,
+ "latency": {
+  "embed_ms": 0.64,
+  "search_ms": 7.98,
+  "retrieval_ms": 8.62
+ }
+}
+
+$ POST /query WITHOUT GROQ_API_KEY (retrieval ok, generation unavailable)
+{
+ "status": "generation_error",
+ "reason": "llm_call_failed",
+ "retrieved_chunk_count": 3,
+ "latency": {
+  "retrieval_ms": 6.96,
+  "generation_ms": 0.02,
+  "end_to_end_ms": 7.2
+ },
+ "token_usage": {
+  "available": false,
+  "prompt_tokens": null,
+  "completion_tokens": null,
+  "total_tokens": null
+ },
+ "error": {
+  "category": "configuration",
+  "message": "GROQ_API_KEY is not set; generation is unavailable (retrieval still works)."
+ }
+}
+[HTTP 503]
+
+$ POST /query unrelated
+{'status': 'no_relevant_context', 'reason': 'low_relevance', 'abstained': True, 'answer': 'I could not find relevant information in the indexed documents to answer this question.'}

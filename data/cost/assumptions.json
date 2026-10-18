@@ -1,0 +1,50 @@
+{
+  "_readme": "All inputs of the cost model. Edit this file and re-run `python -m app.cli cost` to update every table. 'verified' says whether the number was checked against a public source on access_date; unverified values are illustrative estimates, NOT quotes.",
+  "access_date": "2026-10-18",
+  "currency": "USD",
+  "region": "us-east-1 (AWS) / AWS us-east-1 serverless index (Pinecone)",
+  "scales": [100000, 1000000, 10000000],
+  "workload": {
+    "embedding_dim": 384,
+    "bytes_per_float": 4,
+    "avg_chunk_text_bytes": 1100,
+    "avg_metadata_bytes": 450,
+    "queries_per_month": 300000,
+    "monthly_rewrite_fraction": 0.10,
+    "note": "Same corpus, same queries and same payload (vector + chunk text + metadata) are assumed on both sides so the comparison is like-for-like. float32 vectors, no quantisation."
+  },
+  "self_hosted_chromadb": {
+    "index_overhead_factor": {"value": 1.5, "verified": false,
+      "note": "HNSW graph links + bookkeeping, as a multiple of raw vector bytes. Estimate; Chroma/hnswlib overhead depends on M and ef settings."},
+    "ram_headroom_factor": {"value": 1.3, "verified": false, "note": "headroom over the in-memory HNSW index for fragmentation and growth"},
+    "baseline_ram_gib": {"value": 2.0, "verified": false, "note": "OS + FastAPI + query-time embedding model (MiniLM + torch ~1 GiB)"},
+    "disk_headroom_factor": {"value": 1.5, "verified": false, "note": "SQLite metadata + HNSW segment files + compaction/snapshot scratch space"},
+    "backup_copies": {"value": 1.0, "verified": false, "note": "one full-size incremental snapshot chain retained"},
+    "ha_nodes": 2,
+    "instances": [
+      {"name": "m6i.large",   "ram_gib": 8,   "usd_per_hour": 0.096, "verified": "third-party aggregator (doit.com), on-demand us-east-1, not aws.amazon.com"},
+      {"name": "m6i.xlarge",  "ram_gib": 16,  "usd_per_hour": 0.192, "verified": "third-party aggregator (doit.com / holori.com), on-demand us-east-1"},
+      {"name": "r6i.xlarge",  "ram_gib": 32,  "usd_per_hour": 0.252, "verified": "third-party aggregator (doit.com), on-demand us-east-1"},
+      {"name": "r6i.2xlarge", "ram_gib": 64,  "usd_per_hour": 0.504, "verified": "third-party aggregator (doit.com), on-demand us-east-1"},
+      {"name": "r6i.4xlarge", "ram_gib": 128, "usd_per_hour": 1.008, "verified": "third-party aggregator (doit.com), on-demand us-east-1"}
+    ],
+    "hours_per_month": 730,
+    "ebs_gp3_usd_per_gb_month": {"value": 0.08, "verified": "weak: from a blog post, not aws.amazon.com - re-check"},
+    "snapshot_usd_per_gb_month": {"value": 0.05, "verified": false},
+    "ops_hours_per_month": {"100000": 2, "1000000": 4, "10000000": 12},
+    "ops_usd_per_hour": {"value": 75, "verified": false, "note": "loaded engineering cost; a pure assumption. Reported separately because it dominates at small scale."}
+  },
+  "managed_pinecone_serverless_standard": {
+    "source": "https://www.pinecone.io/pricing.md (Pricing Dimensions table) - accessed 2026-10-18; corroborated by third-party trackers",
+    "verified": true,
+    "monthly_minimum_usd": 50,
+    "storage_usd_per_gb_month": 0.33,
+    "read_units_usd_per_million": {"low": 16.0, "high": 18.0, "used": "low"},
+    "write_units_usd_per_million": {"low": 4.0, "high": 4.5, "used": "low"},
+    "read_unit_rule": "1 RU per GB of namespace size per query, minimum 0.25 RU (per Pinecone docs as summarised by third-party tracker flexprice.io; verify)",
+    "write_unit_rule": "~1 WU per KB written, minimum 5 per request (third-party summary; verify). Batched upserts assumed.",
+    "egress": "100 GB/month included on paid tiers; assumed not exceeded",
+    "note": "The low end of the published read/write price range is used. That favours the managed DB, so any saving shown for self-hosting is conservative. Pod-based pricing is not modelled: current pod prices could not be verified. Dedicated Read Nodes (an extra paid option) are not modelled."
+  },
+  "excluded_common_costs": "Embedding generation (local MiniLM: $0 API cost, CPU time only), LLM inference (Groq tokens) and the application server are identical on both sides and therefore excluded from the comparison; they would be added equally to both columns."
+}

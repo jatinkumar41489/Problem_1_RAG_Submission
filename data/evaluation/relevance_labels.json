@@ -1,0 +1,181 @@
+{
+  "Q01": [
+    {
+      "source_id": "hr/leave_policy.md",
+      "evidence": "25 days of paid annual leave",
+      "grade": 2
+    }
+  ],
+  "Q02": [
+    {
+      "source_id": "hr/leave_policy.md",
+      "evidence": "up to 5 unused days may be carried over",
+      "grade": 2
+    }
+  ],
+  "Q03": [
+    {
+      "source_id": "hr/leave_policy.md",
+      "evidence": "18 weeks of fully paid parental leave",
+      "grade": 2
+    }
+  ],
+  "Q04": [
+    {
+      "source_id": "hr/remote_work_policy.html",
+      "evidence": "may work remotely up to 3 days per week",
+      "grade": 2
+    }
+  ],
+  "Q05": [
+    {
+      "source_id": "hr/remote_work_policy.html",
+      "evidence": "one-time home office stipend of $600",
+      "grade": 2
+    }
+  ],
+  "Q06": [
+    {
+      "source_id": "finance/expense_policy.pdf",
+      "evidence": "capped at $220 per night in tier-1 cities",
+      "grade": 2,
+      "page": 2
+    }
+  ],
+  "Q07": [
+    {
+      "source_id": "finance/expense_policy.pdf",
+      "evidence": "within 30 days of the expense date",
+      "grade": 2,
+      "page": 3
+    }
+  ],
+  "Q08": [
+    {
+      "source_id": "finance/expense_policy.pdf",
+      "evidence": "claims above $2,000 additionally need approval from the finance director",
+      "grade": 2,
+      "page": 3
+    }
+  ],
+  "Q09": [
+    {
+      "source_id": "finance/expense_policy.pdf",
+      "evidence": "dinner up to $60",
+      "grade": 2,
+      "page": 1
+    }
+  ],
+  "Q10": [
+    {
+      "source_id": "security/password_and_access_policy.pdf",
+      "evidence": "password of at least 14 characters",
+      "grade": 2,
+      "page": 1
+    }
+  ],
+  "Q11": [
+    {
+      "source_id": "security/password_and_access_policy.pdf",
+      "evidence": "must be rotated every 90 days",
+      "grade": 2,
+      "page": 1
+    }
+  ],
+  "Q12": [
+    {
+      "source_id": "security/password_and_access_policy.pdf",
+      "evidence": "retained for 400 days",
+      "grade": 2,
+      "page": 2
+    },
+    {
+      "source_id": "product/atlas_database_overview.html",
+      "evidence": "keeps each backup for 35 days",
+      "grade": 2
+    }
+  ],
+  "Q13": [
+    {
+      "source_id": "engineering/oncall_handbook.html",
+      "evidence": "acknowledged within 5 minutes for a sev1 incident",
+      "grade": 2
+    }
+  ],
+  "Q14": [
+    {
+      "source_id": "security/incident_response.md",
+      "evidence": "must be assigned within 30 minutes of declaration",
+      "grade": 2
+    }
+  ],
+  "Q15": [
+    {
+      "source_id": "security/incident_response.md",
+      "evidence": "within 72 hours of confirmation",
+      "grade": 2
+    }
+  ],
+  "Q16": [
+    {
+      "source_id": "product/atlas_pricing_and_limits.md",
+      "evidence": "pro | $199 per month",
+      "grade": 2
+    }
+  ],
+  "Q17": [
+    {
+      "source_id": "product/atlas_pricing_and_limits.md",
+      "evidence": "maximum size of a single document is 16 mb",
+      "grade": 2
+    }
+  ],
+  "Q18": [
+    {
+      "source_id": "product/atlas_database_overview.html",
+      "evidence": "to any second within the last 7 days",
+      "grade": 2
+    }
+  ],
+  "Q19": [
+    {
+      "source_id": "engineering/deployment_runbook.md",
+      "evidence": "first receives 5% of traffic for 30 minutes",
+      "grade": 2
+    }
+  ],
+  "Q20": [
+    {
+      "source_id": "engineering/deployment_runbook.md",
+      "evidence": "production deployments are allowed from tuesday to thursday",
+      "grade": 2
+    }
+  ],
+  "Q21": [
+    {
+      "source_id": "support/sla_and_support_tiers.pdf",
+      "evidence": "credit of 10% of the monthly fee",
+      "grade": 2,
+      "page": 2
+    }
+  ],
+  "Q22": [
+    {
+      "source_id": "engineering/oncall_handbook.html",
+      "evidence": "stipend of $500 per week of primary rotation",
+      "grade": 2
+    }
+  ],
+  "Q23": [
+    {
+      "source_id": "hr/leave_policy.md",
+      "evidence": "needs written approval from a department head",
+      "grade": 2
+    },
+    {
+      "source_id": "hr/leave_policy.md",
+      "evidence": "at least 6 weeks in advance",
+      "grade": 1
+    }
+  ]
+}
